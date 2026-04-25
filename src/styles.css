@@ -1,0 +1,176 @@
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Exo+2:wght@400;500;600;700;800&family=Orbitron:wght@600;700;800&family=Rajdhani:wght@500;600;700&family=Teko:wght@500;600;700&display=swap");
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design system definition.
+ *
+ * The @theme inline block maps CSS custom properties to Tailwind utility
+ * classes (e.g. --color-primary -> bg-primary, text-primary).
+ *
+ * The :root and .dark blocks define the actual color values using oklch.
+ * All colors MUST use oklch format.
+ *
+ * To add a new semantic color:
+ * 1. Add the variable to :root (light value) and .dark (dark value)
+ * 2. Register it in @theme inline as --color-<name>: var(--<name>)
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-status-online: var(--status-online);
+  --color-status-temporary: var(--status-temporary);
+  --color-status-offline: var(--status-offline);
+}
+
+:root {
+  --radius: 0.9rem;
+  --background: oklch(0.12 0 0);
+  --foreground: oklch(0.95 0.02 264);
+  --card: oklch(0.34 0.14 292);
+  --card-foreground: oklch(0.95 0.02 264);
+  --popover: oklch(0.34 0.14 292);
+  --popover-foreground: oklch(0.95 0.02 264);
+  --primary: oklch(0.68 0.2 292);
+  --primary-foreground: oklch(0.16 0.03 272);
+  --secondary: oklch(0.3 0.1 258);
+  --secondary-foreground: oklch(0.95 0.02 264);
+  --muted: oklch(0.25 0.05 270);
+  --muted-foreground: oklch(0.79 0.04 263);
+  --accent: oklch(0.63 0.17 247);
+  --accent-foreground: oklch(0.97 0.01 240);
+  --destructive: oklch(0.63 0.22 25);
+  --destructive-foreground: oklch(0.98 0.01 100);
+  --border: oklch(0.4 0.08 272);
+  --input: oklch(0.28 0.06 269);
+  --ring: oklch(0.68 0.2 292);
+  --chart-1: oklch(0.68 0.2 292);
+  --chart-2: oklch(0.63 0.17 247);
+  --chart-3: oklch(0.61 0.16 278);
+  --chart-4: oklch(0.74 0.13 316);
+  --chart-5: oklch(0.56 0.19 235);
+  --sidebar: oklch(0.2 0.05 274);
+  --sidebar-foreground: oklch(0.95 0.02 264);
+  --sidebar-primary: oklch(0.68 0.2 292);
+  --sidebar-primary-foreground: oklch(0.16 0.03 272);
+  --sidebar-accent: oklch(0.3 0.1 258);
+  --sidebar-accent-foreground: oklch(0.95 0.02 264);
+  --sidebar-border: oklch(0.4 0.08 272);
+  --sidebar-ring: oklch(0.68 0.2 292);
+  --status-online: oklch(0.72 0.2 148);
+  --status-temporary: oklch(0.74 0.17 62);
+  --status-offline: oklch(0.62 0.02 265);
+}
+
+.dark {
+  --background: oklch(0.12 0 0);
+  --foreground: oklch(0.95 0.02 264);
+  --card: oklch(0.34 0.14 292);
+  --card-foreground: oklch(0.95 0.02 264);
+  --popover: oklch(0.34 0.14 292);
+  --popover-foreground: oklch(0.95 0.02 264);
+  --primary: oklch(0.68 0.2 292);
+  --primary-foreground: oklch(0.16 0.03 272);
+  --secondary: oklch(0.3 0.1 258);
+  --secondary-foreground: oklch(0.95 0.02 264);
+  --muted: oklch(0.25 0.05 270);
+  --muted-foreground: oklch(0.79 0.04 263);
+  --accent: oklch(0.63 0.17 247);
+  --accent-foreground: oklch(0.97 0.01 240);
+  --destructive: oklch(0.63 0.22 25);
+  --destructive-foreground: oklch(0.98 0.01 100);
+  --border: oklch(0.4 0.08 272);
+  --input: oklch(0.28 0.06 269);
+  --ring: oklch(0.68 0.2 292);
+  --chart-1: oklch(0.68 0.2 292);
+  --chart-2: oklch(0.63 0.17 247);
+  --chart-3: oklch(0.61 0.16 278);
+  --chart-4: oklch(0.74 0.13 316);
+  --chart-5: oklch(0.56 0.19 235);
+  --sidebar: oklch(0.2 0.05 274);
+  --sidebar-foreground: oklch(0.95 0.02 264);
+  --sidebar-primary: oklch(0.68 0.2 292);
+  --sidebar-primary-foreground: oklch(0.16 0.03 272);
+  --sidebar-accent: oklch(0.3 0.1 258);
+  --sidebar-accent-foreground: oklch(0.95 0.02 264);
+  --sidebar-border: oklch(0.4 0.08 272);
+  --sidebar-ring: oklch(0.68 0.2 292);
+  --status-online: oklch(0.72 0.2 148);
+  --status-temporary: oklch(0.74 0.17 62);
+  --status-offline: oklch(0.62 0.02 265);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: "Exo 2", "Segoe UI", sans-serif;
+    background-image: radial-gradient(circle at 12% 0%, oklch(0.42 0.16 292 / 28%), transparent 40%),
+      radial-gradient(circle at 88% 0%, oklch(0.52 0.16 240 / 22%), transparent 38%);
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .panel {
+    @apply rounded-2xl border border-border bg-card/85 shadow-xl backdrop-blur;
+  }
+
+  .menu-link {
+    @apply inline-flex items-center rounded-xl px-4 py-2 text-base font-bold uppercase tracking-[0.14em] text-muted-foreground transition-colors hover:bg-secondary/70 hover:text-foreground;
+  }
+
+  .menu-link-active {
+    @apply bg-gradient-to-r from-primary to-accent text-primary-foreground shadow-lg shadow-primary/30;
+  }
+
+  .action-button {
+    @apply inline-flex items-center justify-center rounded-xl border border-border bg-secondary/80 px-4 py-2 text-sm font-bold uppercase tracking-[0.12em] text-secondary-foreground transition-colors hover:bg-accent hover:text-accent-foreground;
+  }
+}
